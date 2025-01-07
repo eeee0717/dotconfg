@@ -1,0 +1,136 @@
+"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+
+[manager]
+linemode = "size"
+show_hidden = false
+sort_by = "natural"
+scrolloff = 5
+
+[preview]
+tab_size = 2
+max_width = 1000
+max_height = 1000
+
+[opener]
+edit = [
+  { run = '${EDITOR:=nvim} "$@"', desc = "$EDITOR", block = true },
+  { run = 'code "$@"', orphan = true },
+]
+play = [
+  { run = 'iina-cli --no-stdin "$@"' },
+  { run = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info" },
+  { run = 'mpv --force-window "$@"' },
+]
+archive = [
+  { run = '/Applications/Keka.app/Contents/MacOS/Keka "$1"', orphan = true, desc = "Keka" },
+  { run = 'unar "$1"', desc = "Extract here" },
+]
+extract = [
+  { run = '/Applications/Keka.app/Contents/MacOS/Keka "$1"', desc = "Extract here", for = "unix" },
+  { run = 'ya pub extract --list %*', desc = "Extract here", for = "windows" },
+]
+[open]
+rules = [
+  { name = "*/", use = [
+    "open",
+    "edit",
+    "reveal",
+  ] },
+  { name = "*.lua", use = "edit" },
+  { name = "*.conf", use = "edit" },
+  { mime = "text/*", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "image/*", use = [
+    "open",
+    "reveal",
+  ] },
+  { mime = "video/*", use = [
+    "play",
+    "reveal",
+  ] },
+  { mime = "audio/*", use = [
+    "play",
+    "reveal",
+  ] },
+  { mime = "inode/x-empty", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  { mime = "application/json", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "*/javascript", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  { mime = "application/zip", use = [
+    "extract",
+    "reveal",
+    "archive",
+  ] },
+  { mime = "application/gzip", use = [
+    "extract",
+    "reveal",
+    "archive",
+  ] },
+  { mime = "application/x-tar", use = [
+    "extract",
+    "reveal",
+    "archive",
+  ] },
+  { mime = "application/x-bzip", use = [
+    "extract",
+    "reveal",
+    "archive",
+  ] },
+  { mime = "application/x-bzip2", use = [
+    "extract",
+    "reveal",
+    "archive",
+  ] },
+  { mime = "application/x-7z-compressed", use = [
+    "extract",
+    "reveal",
+    "archive",
+  ] },
+  { mime = "application/x-rar", use = [
+    "extract",
+    "reveal",
+    "archive",
+  ] },
+
+  { name = "*", use = [
+    "open",
+    "edit",
+    "reveal",
+  ] },
+]
+
+[plugin]
+prepend_previewers = [{ mime = "audio/*", run = "exifaudio" }]
+
+
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*"
+run = "git"
+
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*/"
+run = "git"
+
+[[plugin.prepend_fetchers]]
+id = "mactag"
+name = "*"
+run = "mactag"
+
+[[plugin.prepend_fetchers]]
+id = "mactag"
+name = "*/"
+run = "mactag"
