@@ -32,8 +32,8 @@ extract = [
 [open]
 rules = [
   { name = "*/", use = [
-    "open",
     "edit",
+    "open",
     "reveal",
   ] },
   { name = "*.lua", use = "edit" },
