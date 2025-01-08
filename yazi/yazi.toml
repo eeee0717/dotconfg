@@ -29,6 +29,9 @@ extract = [
   { run = '/Applications/Keka.app/Contents/MacOS/Keka "$1"', desc = "Extract here", for = "unix" },
   { run = 'ya pub extract --list %*', desc = "Extract here", for = "windows" },
 ]
+doc = [
+  { run = '/Applications/Pages.app/Contents/MacOS/Pages "$1"', orphan = true, desc = "Pages" },
+]
 [open]
 rules = [
   { name = "*/", use = [
@@ -38,6 +41,7 @@ rules = [
   ] },
   { name = "*.lua", use = "edit" },
   { name = "*.conf", use = "edit" },
+  { name = "*.pages", use = "doc" },
   { mime = "text/*", use = [
     "edit",
     "reveal",
