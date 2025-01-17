@@ -30,7 +30,7 @@ extract = [
   { run = 'ya pub extract --list %*', desc = "Extract here", for = "windows" },
 ]
 doc = [
-  { run = '/Applications/Pages.app/Contents/MacOS/Pages "$1"', orphan = true, desc = "Pages" },
+  { run = '/Applications/Pages.app/Contents/MacOS/Pages "$1"', desc = "Pages" },
 ]
 [open]
 rules = [
