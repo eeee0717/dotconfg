@@ -18,6 +18,11 @@ return {
         },
         ["<S-Tab>"] = { "snippet_backward", "fallback" },
       },
+      completion = {
+        keyword = {
+          range = "full",
+        },
+      },
     },
   },
 }

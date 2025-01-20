@@ -75,5 +75,12 @@ config.keys = {
 			act.SendKey({ key = "x" }),
 		}),
 	},
+	{ mods = "OPT", key = "LeftArrow", action = act.SendKey({ mods = "ALT", key = "b" }) },
+	{ mods = "OPT", key = "RightArrow", action = act.SendKey({ mods = "ALT", key = "f" }) },
+	{ mods = "CMD", key = "LeftArrow", action = act.SendKey({ mods = "CTRL", key = "a" }) },
+	{ mods = "CMD", key = "RightArrow", action = act.SendKey({ mods = "CTRL", key = "e" }) },
+	{ mods = "CMD", key = "Backspace", action = act.SendKey({ mods = "CTRL", key = "u" }) },
+	{ mods = "CMD|ALT", key = "LeftArrow", action = act.ActivateTabRelative(-1) },
+	{ mods = "CMD|ALT", key = "RightArrow", action = act.ActivateTabRelative(1) },
 }
 return config
