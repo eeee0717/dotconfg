@@ -212,6 +212,16 @@ run = 'move-node-to-workspace 1'
 if.app-id = 'com.github.wez.wezterm'
 run = 'layout floating'
 
+# Monitor 
+[[on-window-detected]]
+if.app-id = 'com.apple.ActivityMonitor'
+run = 'layout floating'
+
+# Quantumult-x 
+[[on-window-detected]]
+if.app-id = 'com.crossutility.quantumult-x'
+run = 'layout floating'
+
 # Code
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
