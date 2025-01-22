@@ -83,4 +83,16 @@ config.keys = {
 	{ mods = "CMD|ALT", key = "LeftArrow", action = act.ActivateTabRelative(-1) },
 	{ mods = "CMD|ALT", key = "RightArrow", action = act.ActivateTabRelative(1) },
 }
+config.mouse_bindings = {
+	-- Change the default click behavior so that it only selects
+	-- text and doesn't open hyperlinks, and that it populates
+	-- the Clipboard rather the PrimarySelection which is part
+	-- of the default assignment for a left mouse click.
+	{
+		event = { Up = { streak = 1, button = "Left" } },
+		mods = "NONE",
+		action = act.Nop,
+	},
+}
+
 return config
