@@ -6,10 +6,11 @@ return {
     version = false, -- set this if you want to always pull the latest change
     opts = {
       -- add any opts here
-      provider = "copilot", -- Recommend usingcopilot
+      provider = "copilot", -- Recommend using copilot
       auto_suggestions_provider = "copilot",
       copilot = {
         model = "claude-3.5-sonnet",
+        -- model = "gpt-4o",
       },
       behaviour = {
         auto_suggestions = false, -- Experimental stage

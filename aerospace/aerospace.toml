@@ -222,6 +222,11 @@ run = 'layout floating'
 if.app-id = 'com.crossutility.quantumult-x'
 run = 'layout floating'
 
+# Quantumult-x 
+[[on-window-detected]]
+if.app-id = 'com.apple.AppStore'
+run = 'layout floating'
+
 # Code
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
