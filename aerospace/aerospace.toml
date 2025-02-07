@@ -242,6 +242,10 @@ if.app-id = 'com.tencent.qq'
 run = 'move-node-to-workspace 9'
 
 [[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = 'move-node-to-workspace 9'
+
+[[on-window-detected]]
 run = 'move-node-to-workspace 9'
 if.app-id = 'com.microsoft.Outlook'
 
