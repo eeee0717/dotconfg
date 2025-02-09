@@ -39,6 +39,8 @@ rules = [
     "open",
     "reveal",
   ] },
+  { name = "*.rs", use = "edit" },
+  { name = "*.py", use = "edit" },
   { name = "*.lua", use = "edit" },
   { name = "*.conf", use = "edit" },
   { name = "*.pages", use = "doc" },

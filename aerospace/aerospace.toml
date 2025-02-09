@@ -274,5 +274,9 @@ if.app-id = 'com.pake.xiaohongshu'
 run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
+if.app-id = 'com.pake.chatgpt'
+run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
 if.app-id = 'com.apple.finder'
 run = 'layout floating'
