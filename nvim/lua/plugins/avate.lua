@@ -9,7 +9,7 @@ return {
       provider = "copilot", -- Recommend using copilot
       auto_suggestions_provider = "copilot",
       copilot = {
-        model = "claude-3.5-sonnet",
+        model = "claude-3.7-sonnet",
         -- model = "gpt-4o",
       },
       behaviour = {
@@ -31,7 +31,15 @@ return {
       --- The below dependencies are optional,
       "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
       "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-      "zbirenbaum/copilot.lua", -- for providers='copilot'
+      -- "zbirenbaum/copilot.lua", -- for provihttps://github.com/copilotders='copilot'
+      {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+          require("copilot").setup({})
+        end,
+      },
       {
         -- support for image pasting
         "HakonHarnes/img-clip.nvim",

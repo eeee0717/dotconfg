@@ -44,6 +44,7 @@ rules = [
   { name = "*.lua", use = "edit" },
   { name = "*.conf", use = "edit" },
   { name = "*.pages", use = "doc" },
+  { name = "*.ts", use = "edit" },
   { mime = "text/*", use = [
     "edit",
     "reveal",
