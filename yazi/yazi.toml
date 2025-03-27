@@ -45,6 +45,8 @@ rules = [
   { name = "*.conf", use = "edit" },
   { name = "*.pages", use = "doc" },
   { name = "*.ts", use = "edit" },
+  { name = "*.tsx", use = "edit" },
+  { name = "*.md", use = "edit" },
   { mime = "text/*", use = [
     "edit",
     "reveal",
