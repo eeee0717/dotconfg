@@ -237,6 +237,12 @@ run = 'move-node-to-workspace 2'
 if.app-id = 'com.tencent.xinWeChat'
 run = 'move-node-to-workspace 9'
 
+# Chat
+[[on-window-detected]]
+if.app-id = 'com.tencent.WeWorkMac'
+run = 'move-node-to-workspace 9'
+
+
 [[on-window-detected]]
 if.app-id = 'com.tencent.qq'
 run = 'move-node-to-workspace 9'
@@ -279,4 +285,8 @@ run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.window-title-regex-substring = '画中画'
 run = 'layout floating'
